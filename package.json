@@ -1,0 +1,23 @@
+{
+  "name": "algorithms-practice",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rishabh09/algorithms-practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rishabh09/algorithms-practice/issues"
+  },
+  "homepage": "https://github.com/rishabh09/algorithms-practice#readme",
+  "devDependencies": {
+    "jest": "23.6.0"
+  }
+}
