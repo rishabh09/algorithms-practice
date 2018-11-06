@@ -118,46 +118,35 @@ describe("Binary Search Tree", () => {
       },
       value: 5
     });
-    //   expect(tree.show()).toEqual({
-    //     left: {
-    //       left: null,
-    //       right: {
-    //         left: {
-    //           left: {
-    //             left: null,
-    //             right: null,
-    //             value: 1
-    //           },
-    //           right: null,
-    //           value: 2
-    //         },
-    //         right: null,
-    //         value: 4
-    //       },
-    //       value: 3
-    //     },
-    //     right: {
-    //       left: {
-    //         left: null,
-    //         right: {
-    //           left: null,
-    //           right: null,
-    //           value: 7
-    //         },
-    //         value: 6
-    //       },
-    //       right: {
-    //         left: {
-    //           left: null,
-    //           right: null,
-    //           value: 9
-    //         },
-    //         right: null,
-    //         value: 10
-    //       },
-    //       value: 8
-    //     },
-    //     value: 5
-    //   });
+  });
+
+  it("should find the minimum value in tree", () => {
+    const tree = new BST();
+    tree.add(5);
+    tree.add(3);
+    tree.add(4);
+    tree.add(2);
+    tree.add(1);
+    tree.add(8);
+    tree.add(6);
+    tree.add(10);
+    tree.add(7);
+    tree.add(9);
+    expect(tree.findMin()).toBe(1);
+  });
+
+  it("should find the maximum value in tree", () => {
+    const tree = new BST();
+    tree.add(5);
+    tree.add(3);
+    tree.add(4);
+    tree.add(2);
+    tree.add(1);
+    tree.add(8);
+    tree.add(6);
+    tree.add(10);
+    tree.add(7);
+    tree.add(9);
+    expect(tree.findMax()).toBe(10);
   });
 });
