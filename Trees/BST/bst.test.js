@@ -194,4 +194,25 @@ describe("Binary Search Tree", () => {
     tree.add(9);
     expect(tree.givePostorder()).toEqual([1, 2, 4, 3, 7, 6, 9, 10, 8, 5]);
   });
+
+  it("should give search the element", () => {
+    const tree = new BST();
+    tree.add(5);
+    tree.add(3);
+    tree.add(4);
+    tree.add(2);
+    tree.add(1);
+    tree.add(8);
+    tree.add(6);
+    tree.add(10);
+    tree.add(7);
+    tree.add(9);
+    expect(tree.search(null)).toBe(null);
+    expect(tree.search(5)).toBe(5);
+    expect(tree.search(3)).toBe(3);
+    expect(tree.search(1)).toBe(1);
+    expect(tree.search(8)).toBe(8);
+    expect(tree.search(7)).toBe(7);
+    expect(tree.search(12)).toBe(null);
+  });
 });

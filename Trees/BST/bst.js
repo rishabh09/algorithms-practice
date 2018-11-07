@@ -104,6 +104,20 @@ class BST {
     const node = this.root;
     return this.postOrder(node);
   }
+
+  search(data, node = this.root) {
+    if (data === null) {
+      return null;
+    } else if (node === null) {
+      return null;
+    } else if (data === node.value) {
+      return node.value;
+    } else if (data < node.value) {
+      return this.search(data, node.left);
+    } else if (data > node.value) {
+      return this.search(data, node.right);
+    }
+  }
 }
 
 module.exports = BST;
