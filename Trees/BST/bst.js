@@ -118,6 +118,38 @@ class BST {
       return this.search(data, node.right);
     }
   }
+
+  removeNode(data, node) {
+    if (node === null) {
+      return null;
+    } else if (data === node.value) {
+      if (node.left === null && node.right === null) {
+        node = null;
+      } else if (node.right === null) {
+        node = node.left;
+      } else if (node.left === null) {
+        node = node.right;
+      } else {
+        const newNode = node.right;
+        while (newNode.left !== null) {
+          // check left subtree, until it finds the left most leaf
+          newNode = current.left;
+        }
+        node.value = newNode.value;
+        node.right = this.removeNode(newNode.value, node.right);
+      }
+    } else if (data < node.value) {
+      node.left = this.removeNode(data, node.left);
+    } else {
+      node.right = this.removeNode(data, node.right);
+    }
+    return node;
+  }
+  remove(data) {
+    const node = this.root;
+    this.root = this.removeNode(data, node);
+    return this.root;
+  }
 }
 
 module.exports = BST;

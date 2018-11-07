@@ -215,4 +215,46 @@ describe("Binary Search Tree", () => {
     expect(tree.search(7)).toBe(7);
     expect(tree.search(12)).toBe(null);
   });
+
+  it("should remove element from tree", () => {
+    const tree = new BST();
+    tree.add(5);
+    tree.remove(5);
+    expect(tree.show()).toEqual(null);
+  });
+
+  it("should remove element from tree without right child", () => {
+    const tree = new BST();
+    tree.add(5);
+    tree.add(3);
+    tree.remove(5);
+    expect(tree.show()).toEqual({ left: null, right: null, value: 3 });
+  });
+
+  it("should remove element from tree without left child", () => {
+    const tree = new BST();
+    tree.add(5);
+    tree.add(7);
+    tree.remove(5);
+    expect(tree.show()).toEqual({ left: null, right: null, value: 7 });
+  });
+
+  it("should remove element from tree with children", () => {
+    const tree = new BST();
+    tree.add(5);
+    tree.add(3);
+    tree.add(4);
+    tree.add(2);
+    tree.add(1);
+    tree.remove(3);
+    expect(tree.show()).toEqual({
+      left: {
+        left: { left: { left: null, right: null, value: 1 }, right: null, value: 2 },
+        right: null,
+        value: 4
+      },
+      right: null,
+      value: 5
+    });
+  });
 });
