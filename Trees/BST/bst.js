@@ -59,6 +59,51 @@ class BST {
     }
     return current.value;
   }
+
+  inOrder(node) {
+    let arr = [];
+    if (node !== null) {
+      arr = arr.concat(this.inOrder(node.left));
+      arr.push(node.value);
+      arr = arr.concat(this.inOrder(node.right));
+    }
+    return arr;
+  }
+
+  preOrder(node) {
+    let arr = [];
+    if (node !== null) {
+      arr.push(node.value);
+      arr = arr.concat(this.preOrder(node.left));
+      arr = arr.concat(this.preOrder(node.right));
+    }
+    return arr;
+  }
+
+  postOrder(node) {
+    let arr = [];
+    if (node !== null) {
+      arr = arr.concat(this.postOrder(node.left));
+      arr = arr.concat(this.postOrder(node.right));
+      arr.push(node.value);
+    }
+    return arr;
+  }
+
+  giveInorder() {
+    const node = this.root;
+    return this.inOrder(node);
+  }
+
+  givePreorder() {
+    const node = this.root;
+    return this.preOrder(node);
+  }
+
+  givePostorder() {
+    const node = this.root;
+    return this.postOrder(node);
+  }
 }
 
 module.exports = BST;

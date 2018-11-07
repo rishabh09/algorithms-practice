@@ -149,4 +149,49 @@ describe("Binary Search Tree", () => {
     tree.add(9);
     expect(tree.findMax()).toBe(10);
   });
+
+  it("should give inorder traversal", () => {
+    const tree = new BST();
+    tree.add(5);
+    tree.add(3);
+    tree.add(4);
+    tree.add(2);
+    tree.add(1);
+    tree.add(8);
+    tree.add(6);
+    tree.add(10);
+    tree.add(7);
+    tree.add(9);
+    expect(tree.giveInorder()).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+  });
+
+  it("should give preorder traversal", () => {
+    const tree = new BST();
+    tree.add(5);
+    tree.add(3);
+    tree.add(4);
+    tree.add(2);
+    tree.add(1);
+    tree.add(8);
+    tree.add(6);
+    tree.add(10);
+    tree.add(7);
+    tree.add(9);
+    expect(tree.givePreorder()).toEqual([5, 3, 2, 1, 4, 8, 6, 7, 10, 9]);
+  });
+
+  it("should give postorder traversal", () => {
+    const tree = new BST();
+    tree.add(5);
+    tree.add(3);
+    tree.add(4);
+    tree.add(2);
+    tree.add(1);
+    tree.add(8);
+    tree.add(6);
+    tree.add(10);
+    tree.add(7);
+    tree.add(9);
+    expect(tree.givePostorder()).toEqual([1, 2, 4, 3, 7, 6, 9, 10, 8, 5]);
+  });
 });
