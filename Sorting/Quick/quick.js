@@ -36,7 +36,31 @@ const quickSort2 = input => {
   return [...quickSort2(left), pivot, ...quickSort2(right)];
 };
 
+// pivot as median
+const quickSort3 = input => {
+  const arr = [...input];
+  const left = [];
+  const right = [];
+  const arrLength = arr.length;
+  if (arrLength <= 1) return arr;
+
+  const median = Math.floor(arrLength / 2);
+
+  const pivot = arr[median];
+  for (let i = 0; i < arrLength; i++) {
+    if (i !== median) {
+      if (arr[i] < pivot) {
+        left.push(arr[i]);
+      } else {
+        right.push(arr[i]);
+      }
+    }
+  }
+  return [...quickSort3(left), pivot, ...quickSort3(right)];
+};
+
 module.exports = {
   quickSort1,
-  quickSort2
+  quickSort2,
+  quickSort3
 };
