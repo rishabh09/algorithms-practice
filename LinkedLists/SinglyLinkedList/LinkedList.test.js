@@ -100,4 +100,34 @@ describe("Singly Linked List", () => {
       length: 0
     });
   });
+
+  it("should unshif element in list", () => {
+    const list = new LinkedList();
+    list.unshift(2);
+    expect(list).toEqual({ head: { value: 2, next: null }, tail: { value: 2, next: null }, length: 1 });
+  });
+
+  it("should add 2 elements in list", () => {
+    const list = new LinkedList();
+    list.push(2);
+    list.unshift(5);
+    expect(list).toEqual({
+      head: { value: 5, next: { value: 2, next: null } },
+      tail: { value: 2, next: null },
+      length: 2
+    });
+  });
+
+  it("should add 4 elements in list", () => {
+    const list = new LinkedList();
+    list.push(2);
+    list.push(5);
+    list.push(0);
+    list.unshift(3);
+    expect(list).toEqual({
+      head: { value: 3, next: { value: 2, next: { value: 5, next: { value: 0, next: null } } } },
+      tail: { value: 0, next: null },
+      length: 4
+    });
+  });
 });

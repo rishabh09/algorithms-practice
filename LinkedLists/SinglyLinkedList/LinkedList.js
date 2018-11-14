@@ -63,6 +63,21 @@ class LinkedList {
       return null;
     }
   }
+
+  unshift(value) {
+    const newItem = new Node(value);
+
+    if (this.head === null) {
+      this.head = newItem;
+      this.tail = this.head;
+    } else {
+      const nextItem = this.head;
+      this.head = newItem;
+      this.head.next = nextItem;
+    }
+
+    this.length++;
+  }
 }
 
 module.exports = LinkedList;
