@@ -12,6 +12,10 @@
 
 1. [Binary Search Tree](./Trees/BST/bst.js)
 
+## Linked Lists
+
+1. [Singly Linked List](./LinkedLists/SinglyLinkedList/LinkedList.js)
+
 ## TODO
 
 1. Radix Sort
