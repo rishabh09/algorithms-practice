@@ -78,6 +78,29 @@ class LinkedList {
 
     this.length++;
   }
+
+  getItem(index) {
+    if (this.length <= 0 || index >= this.length) return null;
+    let counter = 0;
+    let currentItem = this.head;
+    while (counter < index) {
+      currentItem = currentItem.next;
+      counter++;
+    }
+    return currentItem;
+  }
+
+  get(index) {
+    const item = this.getItem(index);
+    return item ? item.value : item;
+  }
+
+  set(index, value) {
+    const item = this.getItem(index);
+    if (item) {
+      item.value = value;
+    }
+  }
 }
 
 module.exports = LinkedList;
