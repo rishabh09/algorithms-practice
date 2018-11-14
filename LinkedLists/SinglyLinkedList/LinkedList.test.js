@@ -36,6 +36,12 @@ describe("Singly Linked List", () => {
     });
   });
 
+  it("should give null if no element is present", () => {
+    const list = new LinkedList();
+    expect(list.pop()).toBe(null);
+    expect(list).toEqual({ head: null, length: 0, tail: null });
+  });
+
   it("should pop item from the list", () => {
     const list = new LinkedList();
     list.push(2);
@@ -43,7 +49,7 @@ describe("Singly Linked List", () => {
     list.push(0);
     list.push(3);
 
-    list.pop();
+    expect(list.pop()).toBe(3);
     expect(list).toEqual({
       head: { value: 2, next: { value: 5, next: { value: 0, next: null } } },
       tail: { value: 0, next: null },
@@ -54,7 +60,40 @@ describe("Singly Linked List", () => {
   it("should pop item from the list if one element is present", () => {
     const list = new LinkedList();
     list.push(2);
-    list.pop();
+
+    expect(list.pop()).toBe(2);
+    expect(list).toEqual({
+      head: null,
+      tail: null,
+      length: 0
+    });
+  });
+
+  it("should give null if no element is present", () => {
+    const list = new LinkedList();
+    expect(list.shift()).toBe(null);
+    expect(list).toEqual({ head: null, length: 0, tail: null });
+  });
+
+  it("should remove item from the begining of the list", () => {
+    const list = new LinkedList();
+    list.push(2);
+    list.push(5);
+    list.push(0);
+    list.push(3);
+
+    expect(list.shift()).toBe(2);
+    expect(list).toEqual({
+      head: { value: 5, next: { value: 0, next: { value: 3, next: null } } },
+      tail: { value: 3, next: null },
+      length: 3
+    });
+  });
+
+  it("should remove item from the list if one element is present", () => {
+    const list = new LinkedList();
+    list.push(2);
+    expect(list.shift()).toBe(2);
     expect(list).toEqual({
       head: null,
       tail: null,

@@ -27,18 +27,40 @@ class LinkedList {
   }
 
   pop() {
-    let currentItem = this.head;
-    let prevItem = currentItem;
-    while (currentItem.next) {
-      prevItem = currentItem;
-      currentItem = currentItem.next;
+    if (this.length > 0) {
+      let currentItem = this.head;
+      let prevItem = currentItem;
+      while (currentItem.next) {
+        prevItem = currentItem;
+        currentItem = currentItem.next;
+      }
+      this.tail = prevItem;
+      this.tail.next = null;
+      this.length--;
+      if (this.length === 0) {
+        this.head = null;
+        this.tail = null;
+      }
+      return currentItem.value;
+    } else {
+      return null;
     }
-    this.tail = prevItem;
-    this.tail.next = null;
-    this.length--;
-    if (this.length === 0) {
-      this.head = null;
-      this.tail = null;
+  }
+
+  shift() {
+    if (this.length > 0) {
+      let currentItem = this.head;
+
+      this.head = currentItem.next;
+
+      if (this.length === 1) {
+        this.tail = this.head;
+      }
+      this.length--;
+
+      return currentItem.value;
+    } else {
+      return null;
     }
   }
 }
