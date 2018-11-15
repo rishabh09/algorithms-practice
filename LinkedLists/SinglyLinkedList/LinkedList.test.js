@@ -159,4 +159,101 @@ describe("Singly Linked List", () => {
     list.set(2, 10);
     expect(list.get(2)).toBe(10);
   });
+
+  it("should return null if insert index is less than 0", () => {
+    const list = new LinkedList();
+    list.push(2);
+    list.push(5);
+    list.push(0);
+
+    expect(list.insert(-1, 10)).toEqual(null);
+  });
+
+  it("should return null if insert index is greater than length", () => {
+    const list = new LinkedList();
+    list.push(2);
+    list.push(5);
+    list.push(0);
+
+    expect(list.insert(10, 10)).toEqual(null);
+  });
+
+  it("should insert item to start of list", () => {
+    const list = new LinkedList();
+    list.push(2);
+    list.push(5);
+    list.push(0);
+
+    list.insert(0, 10);
+    expect(list.get(0)).toBe(10);
+  });
+
+  it("should insert item to end of list", () => {
+    const list = new LinkedList();
+    list.push(2);
+    list.push(5);
+    list.push(0);
+
+    list.insert(3, 10);
+    expect(list.get(3)).toBe(10);
+  });
+
+  it("should insert item to middle of list", () => {
+    const list = new LinkedList();
+    list.push(2);
+    list.push(5);
+    list.push(0);
+
+    list.insert(1, 10);
+    expect(list.get(1)).toBe(10);
+    expect(list.get(2)).toBe(5);
+  });
+
+  it("should return null if remove index is less than 0", () => {
+    const list = new LinkedList();
+    list.push(2);
+    list.push(5);
+    list.push(0);
+
+    expect(list.remove(-1)).toEqual(null);
+  });
+
+  it("should return null if remove index is greater than length", () => {
+    const list = new LinkedList();
+    list.push(2);
+    list.push(5);
+    list.push(0);
+
+    expect(list.remove(10, 10)).toEqual(null);
+  });
+
+  it("should remove item to start of list", () => {
+    const list = new LinkedList();
+    list.push(2);
+    list.push(5);
+    list.push(0);
+
+    list.remove(0);
+    expect(list.get(0)).toBe(5);
+  });
+
+  it("should remove item to end of list", () => {
+    const list = new LinkedList();
+    list.push(2);
+    list.push(5);
+    list.push(0);
+
+    list.remove(2);
+    expect(list.get(2)).toBe(null);
+  });
+
+  it("should insert item to middle of list", () => {
+    const list = new LinkedList();
+    list.push(2);
+    list.push(5);
+    list.push(0);
+
+    list.remove(1);
+    expect(list.get(1)).toBe(0);
+  });
 });

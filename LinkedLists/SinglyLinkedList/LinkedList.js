@@ -101,6 +101,27 @@ class LinkedList {
       item.value = value;
     }
   }
+
+  insert(index, value) {
+    if (index < 0 || index > this.length) return null;
+    if (index === 0) return this.unshift(value);
+    if (index === this.length) return this.push(value);
+    const newItem = new Node(value);
+    const prevItem = this.getItem(index - 1);
+    newItem.next = prevItem.next;
+    prevItem.next = newItem;
+    this.length++;
+  }
+
+  remove(index) {
+    if (index < 0 || index > this.length) return null;
+    if (index === 0) return this.shift();
+    if (index + 1 === this.length) return this.pop();
+    const prevItem = this.getItem(index - 1);
+    const currentItem = prevItem.next;
+    prevItem.next = currentItem.next;
+    this.length--;
+  }
 }
 
 module.exports = LinkedList;
