@@ -54,6 +54,24 @@ class LinkedList {
       return null;
     }
   }
+
+  shift() {
+    if (this.length > 0) {
+      let currentItem = this.head;
+
+      if (this.length === 1) {
+        this.head = null;
+        this.tail = null;
+      } else {
+        this.head = currentItem.next;
+        this.head.prev = null;
+      }
+      this.length--;
+      return currentItem.value;
+    } else {
+      return null;
+    }
+  }
 }
 
 module.exports = LinkedList;
