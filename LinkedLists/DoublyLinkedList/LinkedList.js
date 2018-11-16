@@ -37,6 +37,23 @@ class LinkedList {
 
     this.length++;
   }
+
+  pop() {
+    if (this.length > 0) {
+      let currentItem = this.tail;
+      if (this.length === 1) {
+        this.head = null;
+        this.tail = null;
+      } else {
+        this.tail = this.tail.prev;
+        this.tail.next = null;
+      }
+      this.length--;
+      return currentItem.value;
+    } else {
+      return null;
+    }
+  }
 }
 
 module.exports = LinkedList;

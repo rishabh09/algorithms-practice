@@ -35,4 +35,36 @@ describe("Doubly Linked List", () => {
     list.push(3);
     expect(list.length).toBe(4);
   });
+
+  it("should give null if no element is present", () => {
+    const list = new LinkedList();
+    expect(list.pop()).toBe(null);
+    expect(list).toEqual({ head: null, length: 0, tail: null });
+  });
+
+  it("should pop item from the list", () => {
+    const list = new LinkedList();
+    list.push(2);
+    list.push(5);
+    list.push(3);
+
+    expect(list.pop()).toBe(3);
+    expect(list).toMatchObject({
+      head: { value: 2, next: { value: 5, prev: { value: 2 } } },
+      tail: { value: 5, next: null, prev: { value: 2 } },
+      length: 2
+    });
+  });
+
+  it("should pop item from the list if one element is present", () => {
+    const list = new LinkedList();
+    list.push(2);
+
+    expect(list.pop()).toBe(2);
+    expect(list).toEqual({
+      head: null,
+      tail: null,
+      length: 0
+    });
+  });
 });
