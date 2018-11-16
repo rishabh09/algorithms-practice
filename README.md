@@ -15,6 +15,7 @@
 ## Linked Lists
 
 1. [Singly Linked List](./LinkedLists/SinglyLinkedList/LinkedList.js)
+2. [Doubly Linked List](./LinkedLists/DoublyLinkedList/LinkedList.js)
 
 ## TODO
 
@@ -25,3 +26,4 @@
 5. Pattern Search
 6. BST find height
 7. Balance BST
+8. Reverse Singly Linked List
