@@ -99,4 +99,38 @@ describe("Doubly Linked List", () => {
       length: 0
     });
   });
+
+  it("should unshif element in list", () => {
+    const list = new LinkedList();
+    list.unshift(2);
+    expect(list).toMatchObject({
+      head: { value: 2, next: null, prev: null },
+      tail: { value: 2, next: null, prev: null },
+      length: 1
+    });
+  });
+
+  it("should add 2 elements in list", () => {
+    const list = new LinkedList();
+    list.push(2);
+    list.unshift(5);
+    expect(list).toMatchObject({
+      head: { value: 5, prev: null, next: { value: 2, next: null } },
+      tail: { value: 2, next: null, prev: { value: 5 } },
+      length: 2
+    });
+  });
+
+  it("should add 4 elements in list", () => {
+    const list = new LinkedList();
+    list.push(2);
+    list.push(5);
+    list.push(0);
+    list.unshift(3);
+    expect(list).toMatchObject({
+      head: { value: 3, next: { value: 2, prev: { value: 3 }, next: { value: 5, next: { value: 0, next: null } } } },
+      tail: { value: 0, next: null, prev: { value: 5 } },
+      length: 4
+    });
+  });
 });
