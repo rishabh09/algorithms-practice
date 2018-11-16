@@ -104,6 +104,13 @@ class LinkedList {
     const item = this.getItem(index);
     return item ? item.value : item;
   }
+
+  set(index, value) {
+    const item = this.getItem(index);
+    if (item) {
+      item.value = value;
+    }
+  }
 }
 
 module.exports = LinkedList;

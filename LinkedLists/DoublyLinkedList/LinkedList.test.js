@@ -152,4 +152,14 @@ describe("Doubly Linked List", () => {
     list.push(2);
     expect(list.get(1)).toBe(null);
   });
+
+  it("should set new value to 2nd element of list", () => {
+    const list = new LinkedList();
+    list.push(2);
+    list.push(5);
+    list.push(0);
+    expect(list.get(2)).toBe(0);
+    list.set(2, 10);
+    expect(list.get(2)).toBe(10);
+  });
 });
