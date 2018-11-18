@@ -17,6 +17,10 @@
 1. [Singly Linked List](./LinkedLists/SinglyLinkedList/LinkedList.js)
 2. [Doubly Linked List](./LinkedLists/DoublyLinkedList/LinkedList.js)
 
+## Stacks and Queues
+
+1. [Stack](./Stacks/stack.js)
+
 ## TODO
 
 1. Radix Sort
