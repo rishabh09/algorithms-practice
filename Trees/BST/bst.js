@@ -105,6 +105,19 @@ class BST {
     return this.postOrder(node);
   }
 
+  giveBFS() {
+    const data = [];
+    const queue = [];
+    queue.push(this.root);
+    while (queue.length) {
+      const node = queue.shift();
+      data.push(node.value);
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
+    }
+    return data;
+  }
+
   search(data, node = this.root) {
     if (data === null) {
       return null;

@@ -195,6 +195,21 @@ describe("Binary Search Tree", () => {
     expect(tree.givePostorder()).toEqual([1, 2, 4, 3, 7, 6, 9, 10, 8, 5]);
   });
 
+  it("should give breadth first traversal", () => {
+    const tree = new BST();
+    tree.add(5);
+    tree.add(3);
+    tree.add(4);
+    tree.add(2);
+    tree.add(1);
+    tree.add(8);
+    tree.add(6);
+    tree.add(10);
+    tree.add(7);
+    tree.add(9);
+    expect(tree.giveBFS()).toEqual([5, 3, 8, 2, 4, 6, 10, 1, 7, 9]);
+  });
+
   it("should give search the element", () => {
     const tree = new BST();
     tree.add(5);
