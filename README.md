@@ -1,5 +1,7 @@
 # Algorithms practice in Javascript
 
+[![CircleCI](https://circleci.com/gh/rishabh09/algorithms-practice.svg?style=svg)](https://circleci.com/gh/rishabh09/algorithms-practice)
+
 ## Sorting Algorithms
 
 1. [Bubble Sort](./Sorting/Bubble/bubble.js)
@@ -20,6 +22,10 @@
 ## Stacks and Queues
 
 1. [Stack](./Stacks/stack.js)
+
+## Heaps
+
+1. [Max Binary Heap](./Heaps/MaxBinaryHeap/max-binary-heap.js)
 
 ## TODO
 
