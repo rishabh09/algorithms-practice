@@ -33,6 +33,7 @@
    - [isUnique](./CTCI/c1/q1.js)
    - [check Permutation](./CTCI/c1/q2.js)
    - [Urlify](./CTCI/c1/q3.js)
+   - [Palindrome Permutation](./CTCI/c1/q4.js)
 
 ## TODO
 
