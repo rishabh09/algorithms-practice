@@ -5,6 +5,7 @@ const isUnique = str => {
   // make array of string and sort it
   const strArr = str.split("").sort();
   for (let i = 1; i < strArr.length; i++) {
+    // check if char match with prev char
     if (strArr[i] === strArr[i - 1]) return false;
   }
   return true;

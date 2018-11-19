@@ -27,6 +27,12 @@
 
 1. [Max Binary Heap](./Heaps/MaxBinaryHeap/max-binary-heap.js)
 
+## Cracking The Coding Interview
+
+1. Chapter 1
+   - [isUnique](./CTCI/c1/q1.js)
+   - [check Permutation](./CTCI/c1/q2.js)
+
 ## TODO
 
 1. Radix Sort
