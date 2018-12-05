@@ -13,6 +13,7 @@
 ## Searching
 
 1. [Binary Search](./Searching/BinarySearch/binary-search.js)
+1. [Binary Search: Rotated Array](./Searching/BinarySearchRotated/binary-search.js)
 
 ## Trees
 
@@ -43,7 +44,7 @@
 
 1. Radix Sort
 2. ~~Binary Search (linear array)~~
-3. Binary Search (circular Array)
+3. ~~Binary Search (circular Array)~~
 4. Linear Search
 5. Pattern Search
 6. BST find height
