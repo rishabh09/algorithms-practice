@@ -30,7 +30,7 @@ const mergeArray = (left, right) => {
   }
 
   if (rightLength > 0) {
-    result = result.concat(right[0]);
+    result = result.concat(right);
   }
   return result;
 };

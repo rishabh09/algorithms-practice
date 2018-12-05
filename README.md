@@ -10,6 +10,10 @@
 4. [Insertion Sort](./Sorting/Insertion/insertion.js)
 5. [Selection Sort](./Sorting/Selection/selection.js)
 
+## Searching
+
+1. [Binary Search](./Searching/BinarySearch/binary-search.js)
+
 ## Trees
 
 1. [Binary Search Tree](./Trees/BST/bst.js)
@@ -38,7 +42,7 @@
 ## TODO
 
 1. Radix Sort
-2. Binary Search (linear array)
+2. ~~Binary Search (linear array)~~
 3. Binary Search (circular Array)
 4. Linear Search
 5. Pattern Search
