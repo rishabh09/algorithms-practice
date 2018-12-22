@@ -19,6 +19,10 @@
 
 1. [Binary Search Tree](./Trees/BST/bst.js)
 
+## Graph
+
+1. [Graph](./Graphs/graph.js)
+
 ## Linked Lists
 
 1. [Singly Linked List](./LinkedLists/SinglyLinkedList/LinkedList.js)
