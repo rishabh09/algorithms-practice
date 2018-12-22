@@ -47,7 +47,21 @@ describe("Graph", () => {
   it("should give error if vertex is not present", () => {
     const graph = new Graph();
     graph.addVertex("a");
-
     expect(graph.removeEdge("a", "b")).toBe("Vertex not present");
+  });
+
+  it("should remove vertex from the graph", () => {
+    const graph = new Graph();
+    graph.addVertex("a");
+    graph.addVertex("b");
+    graph.addVertex("c");
+    graph.addVertex("d");
+    graph.addEdge("a", "b");
+    graph.addEdge("a", "c");
+    graph.addEdge("a", "d");
+    graph.addEdge("b", "c");
+    graph.addEdge("b", "d");
+    graph.removeVertex("a");
+    expect(graph.adjacencyList).toEqual({ b: ["c", "d"], c: ["b"], d: ["b"] });
   });
 });
