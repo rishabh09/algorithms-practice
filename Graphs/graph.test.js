@@ -28,4 +28,26 @@ describe("Graph", () => {
     graph.addVertex("a");
     expect(graph.adjacencyList).not.toEqual({ a: [], b: ["a"] });
   });
+
+  it("should give error if vertex not present", () => {
+    const graph = new Graph();
+    graph.addVertex("b");
+    expect(graph.addEdge("a", "b")).toBe("Vertex not present");
+  });
+
+  it("should remove edge from the graph", () => {
+    const graph = new Graph();
+    graph.addVertex("a");
+    graph.addVertex("b");
+    graph.addEdge("a", "b");
+    graph.removeEdge("a", "b");
+    expect(graph.adjacencyList).toEqual({ a: [], b: [] });
+  });
+
+  it("should give error if vertex is not present", () => {
+    const graph = new Graph();
+    graph.addVertex("a");
+
+    expect(graph.removeEdge("a", "b")).toBe("Vertex not present");
+  });
 });
